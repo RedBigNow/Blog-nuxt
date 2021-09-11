@@ -1,7 +1,13 @@
 <template>
-  <Tutorial/>
+    <div class="wrapper-content wrapper-content--fixed">
+        <defaultTemplate/>
+    </div>
 </template>
 
 <script>
-export default {}
+import defaultTemplate from '@/layouts/default.vue'
+
+export default {
+    components: { defaultTemplate }
+}
 </script>
