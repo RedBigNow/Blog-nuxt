@@ -1,27 +1,22 @@
 <template>
     <div class="wrapper-content wrapper-content--fixed">
-        <section class="post">
-            <div class="container">
-
-                <!-- header -->
-                <div class="post-header">
-                    <img :src="post.img" :alt="post.title">
-                    <h1 class="title">{{ post.title }}</h1>
-                    <p>{{ post.descr }}</p>
-                </div>
-
-                <!-- body -->
-                <div class="post-body">
-                    <p>{{ post.content }}</p>
-                </div>
-
-            </div>
-        </section>
+        <post :post="post"/>
+        <comments :comments="comments" />
+        <newComment />
     </div>
 </template>
 
 <script>
+import post from '@/components/Blog/Post.vue'
+import comments from '@/components/Comments/Comments.vue'
+import newComment from '@/components/Comments/NewComment.vue'
+
 export default {
+    components: {
+        post,
+        comments,
+        newComment
+    },
     data () {
         return {
             post: {
@@ -30,7 +25,11 @@ export default {
                 descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
                 content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
                 img: 'https://lawnuk.com/wp-content/uploads/2016/08/sprogs-dogs.jpg'
-            }
+            },
+            comments: [
+                { name: 'Alex', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'},
+                { name: 'Jhon', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
+            ]
         }
     }
 }
