@@ -1,0 +1,20 @@
+<template>
+    <newsPostForm @submit="onSubmit" />
+</template>
+
+<script>
+import newsPostForm from '@/components/Admin/NewsPostForm.vue'
+
+export default {
+    components: {
+        newsPostForm
+    },
+    layout: 'admin',
+    methods: {
+        onSubmit (post) {
+            console.log('Post added!')
+            console.log(post)
+        }
+    }
+}
+</script>
