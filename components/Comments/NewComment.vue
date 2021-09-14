@@ -14,16 +14,9 @@
 </template>
 
 <script>
-import AppButton from '@/components/UI/Controls/Button.vue'
-import AppInput from '@/components/UI/Controls/Input.vue'
-import AppTextarea from '@/components/UI/Controls/Textarea.vue'
+
 
 export default {
-    components: {
-        AppButton,
-        AppInput,
-        AppTextarea
-    },
     data () {
         return {
             comment: {
