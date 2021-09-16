@@ -14,9 +14,13 @@
 </template>
 
 <script>
-
-
 export default {
+    props: {
+        postId: {
+            type: String,
+            required: true
+        }
+    },
     data () {
         return {
             comment: {
@@ -27,7 +31,16 @@ export default {
     },
     methods: {
         onSubmit () {
-            console.log(this.comment)
+            this.$store.dispatch('addComment', {
+                postId: this.postId,
+                publish: true,
+                ...this.comment
+            })
+                .then(() => {
+                    this.comment.name = ''
+                    this.comment.text = ''
+                })
+                .catch(e => {console.log(e)})
         }
     }
 }
