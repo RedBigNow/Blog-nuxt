@@ -22,7 +22,7 @@ export default {
     //         posts: []
     //     }
     // },
-    // asyscData (context) {
+    // asyncData (context) {
     //     return new Promise ((resolve, reject) => {
     //         setTimeout(()=> {
     //             resolve({
