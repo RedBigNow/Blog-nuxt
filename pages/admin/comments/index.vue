@@ -1,20 +1,18 @@
 <template>
-    <client-only>
-        <commentTable :thead="['Name', 'Text', 'Status', 'Change status', 'Delete']">
-            <tbody slot="tbody">
-                <tr v-for="comment in comments" :key="comment.id">
-                    <td><span>{{ comment.name }}</span></td>
-                    <td><span>{{ comment.text }}</span></td>
-                    <td>
-                        <span v-if="comment.publish" class="status true">Publish</span>
-                        <span v-else class="status false">Hidden</span>
-                    </td>
-                    <td><span @click="changeComment(comment)" class="link">Change status</span></td>
-                    <td><span @click="deleteComment(comment.id)" class="link">Delete</span></td>
-                </tr>
-            </tbody>
-        </commentTable>
-    </client-only>
+    <commentTable :thead="['Name', 'Text', 'Status', 'Change status', 'Delete']">
+        <tbody slot="tbody">
+            <tr v-for="comment in comments" :key="comment.id">
+                <td><span>{{ comment.name }}</span></td>
+                <td><span>{{ comment.text }}</span></td>
+                <td>
+                    <span v-if="comment.publish" class="status true">Publish</span>
+                    <span v-else class="status false">Hidden</span>
+                </td>
+                <td><span @click="changeComment(comment)" class="link">Change status</span></td>
+                <td><span @click="deleteComment(comment.id)" class="link">Delete</span></td>
+            </tr>
+        </tbody>
+    </commentTable>
 </template>
 
 <script>

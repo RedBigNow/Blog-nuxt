@@ -1,8 +1,10 @@
 <template>
     <div class="wrapper-content wrapper-content--fixed">
         <post :post="post"/>
-        <comments :comments="comments" />
-        <newComment :postId="$route.params.id"/>
+        <client-only>
+            <comments :comments="comments" />
+            <newComment :postId="$route.params.id"/>
+        </client-only>
     </div>
 </template>
 
