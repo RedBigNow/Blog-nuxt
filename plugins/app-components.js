@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 // UI
+import Message from '@/components/UI/Message.vue'
 import Intro from '@/components/UI/Intro.vue'
 import PostList from '@/components/Blog/PostList.vue'
 
@@ -10,6 +11,7 @@ import AppInput from '@/components/UI/Controls/Input.vue'
 import AppTextarea from '@/components/UI/Controls/Textarea.vue'
 
 // UI
+Vue.component('Message', Message)
 Vue.component('Intro', Intro)
 Vue.component('PostList', PostList)
 

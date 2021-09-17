@@ -8,6 +8,7 @@
 <script>
 import Header from '@/components/common/Header.vue'
 export default {
+    name: "default",
     components: { Header }
 }
 </script>
