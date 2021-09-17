@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
@@ -51,5 +53,28 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+        vendor: [
+            'vue',
+            'axios'
+        ]
+    },
+    generate: {
+        routes: function () {
+            return axios.get('https://blog-nuxt-5b600-default-rtdb.firebaseio.com/posts.json')
+                .then((res) => {
+
+                    // Get ID
+                    const postsArray = []
+                    for (let key in res.data) {
+                        postsArray.push( {...res.data[key], id: key } )
+                    }
+
+                    // Routes
+                    return postsArray.map((post) => {
+                        return '/blog/' + post.id
+                    })
+
+                })
+        }
     }
 }
