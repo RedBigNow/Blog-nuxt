@@ -17,33 +17,20 @@ export default {
         promo,
         contacts
     },
-    // data () {
-    //     return {
-    //         posts: []
-    //     }
-    // },
-    // asyncData (context) {
-    //     return new Promise ((resolve, reject) => {
-    //         setTimeout(()=> {
-    //             resolve({
-    //                 postsLoaded: [
-    //                     {
-    //                         id: 1,
-    //                         title: '1 post',
-    //                         descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    //                         img: 'https://lawnuk.com/wp-content/uploads/2016/08/sprogs-dogs.jpg'
-    //                     }
-    //                 ]
-    //             })
-    //         }, 1500)
-    //     })
-    //         .then(data => {
-    //             return data
-    //         })
-    //         .catch(e => {
-    //             context.error(e)
-    //         })
-    // },
+    head () {
+        let title = 'My SSR Blog!',
+            descr = 'My SSR Blog! With Nuxt.js!',
+            type = 'site'
+        return {
+            title: title,
+            meta: [
+                { hid: 'og:title', name: 'og:title', content: title },
+                { hid: 'description', name: 'description', content: descr },
+                { hid: 'og:description', name: 'og:description', content: descr },
+                { hid: 'og:type', name: 'og:type', content: type }
+            ]
+        }
+    },
     computed: {
         postsLoaded () {
             return this.$store.getters.getPostsLoaded

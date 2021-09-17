@@ -19,6 +19,22 @@ export default {
         comments,
         newComment
     },
+    head () {
+        let title = this.post.title,
+            descr = this.post.descr,
+            img = this.post.img,
+            type = 'article'
+        return {
+            title: title,
+            meta: [
+                { hid: 'og:title', name: 'og:title', content: title },
+                { hid: 'description', name: 'description', content: descr },
+                { hid: 'og:description', name: 'og:description', content: descr },
+                { hid: 'og:img', name: 'og:img', content: img },
+                { hid: 'og:type', name: 'og:type', content: type }
+            ]
+        }
+    },
     async asyncData (context) {
         let [post, comments] = await Promise.all([
             axios.get(`https://blog-nuxt-5b600-default-rtdb.firebaseio.com/posts/${context.params.id}.json`),
