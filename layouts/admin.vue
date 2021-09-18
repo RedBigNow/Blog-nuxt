@@ -20,7 +20,7 @@ import Header from '@/components/common/Header.vue'
 export default {
     components: { Header },
     name: 'admin',
-    middleware: ['auth'],
+    middleware: ['auth-check','auth'],
     methods: {
         logoutUser () {
             this.$store.dispatch('logoutUser')

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/-MjjBbAMtJZz9_AbBUVg", {data:[{post:{content:"test test test",descr:"test test",id:"-MjjBbAMtJZz9_AbBUVg",img:"\u002Fimg\u002Fposts\u002F1.jpg",title:"test"},comments:[]}],fetch:{},mutations:[]});
