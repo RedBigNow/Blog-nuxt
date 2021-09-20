@@ -1,8 +1,8 @@
 <template>
     <section class="promo">
         <div class="container">
-            <h1 class="title">My SSR Blog! With Nuxt.js!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+            <h1 class="title">Блог на Vue.js + Nuxt.js!</h1>
+            <p>C рендерингом и админкой, полным SEO и небольшой CRM системой внутри!</p>
         </div>
     </section>
 </template>
